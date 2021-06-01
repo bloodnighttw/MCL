@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-interface IVersion {
+interface IVersions {
 	id:string,
 	"type":string,
 	url:string,
@@ -15,7 +15,7 @@ interface ILaunchMeta{
 		release:string
 		snapshot:string
 	},
-	versions:Array<IVersion>
+	versions:Array<IVersions>
 }
 
 const metaUrl = "https://launchermeta.mojang.com/mc/game/version_manifest_v2.json"
@@ -26,4 +26,4 @@ async function getLaunchMetaList(){
 	return metaL.data;	
 }
 
-export {getLaunchMetaList,ILaunchMeta,IVersion}
+export {getLaunchMetaList,ILaunchMeta,IVersions}
